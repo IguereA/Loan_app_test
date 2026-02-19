@@ -119,16 +119,16 @@ if st.button("🔍 Run Risk Analysis", use_container_width=True):
             st.error("### Result: HIGH RISK")
             st.write("Model recommends **Rejection** due to high default probability.")
             # Show red-ish progress for high risk
-            st.progress(safe_probability)
+            # st.progress(safe_probability)
         else:
             st.success("### Result: LOW RISK")
             st.write("Model recommends **Approval**.")
             # Show green-ish progress for low risk
-            st.progress(safe_probability)
+            #st.progress(safe_probability)
             st.balloons()
             
     with col_res2:
         st.metric("Probability of Default", f"{probability:.2%}")
-        st.progress(safe_probability)
+        #st.progress(safe_probability)
 
 st.sidebar.info("Model Info: Tuned XGBoost | Recall: 94.27%")
