@@ -129,6 +129,6 @@ if st.button("🔍 Run Risk Analysis", use_container_width=True):
             
     with col_res2:
         st.metric("Probability of Default", f"{probability:.2%}")
-        st.progress(probability)
+        st.progress(safe_probability)
 
 st.sidebar.info("Model Info: Tuned XGBoost | Recall: 94.27%")
