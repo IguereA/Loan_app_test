@@ -1,0 +1,93 @@
+
+
+LOAN DEFAULT PREDICTION - COLUMN DESCRIPTIONS
+==============================================
+
+1. age
+   - Data Type: Integer
+   - Description: Age of the loan applicant in years
+   - Range: 21-60 years
+   - Relevance: Older customers may have more stable income
+
+2. monthly_income
+   - Data Type: Integer (Naira)
+   - Description: Monthly income of the applicant
+   - Range: ₦30,000 - ₦250,000
+   - Relevance: Higher income = better repayment ability
+
+3. employment_type
+   - Data Type: Categorical
+   - Values: Salary_Earner, Self_Employed, Business_Owner, Freelancer
+   - Description: Type of employment
+   - Relevance: Salary earners have predictable income
+
+4. loan_amount
+   - Data Type: Integer (Naira)
+   - Description: Amount of loan requested
+   - Range: ₦10,000 - ₦500,000
+   - Relevance: Higher loans = higher default risk
+
+5. loan_duration_months
+   - Data Type: Integer
+   - Description: Loan repayment period in months
+   - Values: 1, 2, 3, 6, 12 months
+   - Relevance: Longer duration may increase default risk
+
+6. previous_loans
+   - Data Type: Integer
+   - Description: Number of previous loans taken
+   - Range: 0-10
+   - Relevance: Shows borrowing history
+
+7. previous_defaults
+   - Data Type: Integer
+   - Description: Number of previous loan defaults
+   - Range: 0-3
+   - Relevance: Strong predictor of future default
+
+8. account_age_months
+   - Data Type: Integer
+   - Description: How long the customer has been with the platform
+   - Range: 1-48 months
+   - Relevance: Longer relationship = more trust
+
+9. num_dependents
+   - Data Type: Integer
+   - Description: Number of dependents (children, relatives)
+   - Range: 0-6
+   - Relevance: More dependents = more financial pressure
+
+10. education_level
+    - Data Type: Categorical
+    - Values: Secondary, OND, HND, BSc, MSc
+    - Description: Highest educational qualification
+    - Relevance: Higher education may correlate with income stability
+
+11. residential_status
+    - Data Type: Categorical
+    - Values: Renting, Living_with_Parents, Own_House
+    - Description: Housing situation
+    - Relevance: Home ownership shows financial stability
+
+12. state
+    - Data Type: Categorical
+    - Values: Lagos, Abuja, Port_Harcourt, Ibadan, Kano, Enugu
+    - Description: State of residence
+    - Relevance: Economic conditions vary by state
+
+13. has_bank_account
+    - Data Type: Binary (0 or 1)
+    - Description: Whether applicant has a bank account
+    - Relevance: Banking relationship indicates financial integration
+
+14. credit_score
+    - Data Type: Integer
+    - Description: Credit score (300-850 scale)
+    - Range: 300-850
+    - Relevance: Primary indicator of creditworthiness
+
+15. loan_default (TARGET VARIABLE)
+    - Data Type: Binary (0 or 1)
+    - Description: Whether the loan was defaulted
+    - Values: 0 = No Default, 1 = Default
+    - This is what we're trying to predict
