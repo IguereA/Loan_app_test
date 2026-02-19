@@ -109,7 +109,8 @@ final_df = pd.DataFrame([input_dict])[MODEL_COLUMNS]
 st.divider()
 if st.button("🔍 Run Risk Analysis", use_container_width=True):
     prediction = model_pipeline.predict(final_df)[0]
-    probability = model_pipeline.predict_proba(final_df)[0][1]
+    probability = model_pipeline.predict_proba(final_df)[0][1]    
+    safe_probability = float(np.clip(probability, 0.0, 1.0))
     
     col_res1, col_res2 = st.columns(2)
     
@@ -117,9 +118,13 @@ if st.button("🔍 Run Risk Analysis", use_container_width=True):
         if prediction == 1:
             st.error("### Result: HIGH RISK")
             st.write("Model recommends **Rejection** due to high default probability.")
+            # Show red-ish progress for high risk
+            st.progress(safe_probability)
         else:
             st.success("### Result: LOW RISK")
             st.write("Model recommends **Approval**.")
+            # Show green-ish progress for low risk
+            st.progress(safe_probability
             st.balloons()
             
     with col_res2:
