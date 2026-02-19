@@ -11,7 +11,7 @@ st.set_page_config(page_title="Loan Risk AI", page_icon="🏦", layout="wide")
 @st.cache_resource
 def load_model():
     # Ensure this filename matches exactly what you saved in your notebook
-    #return joblib.load('models/xgb_loan_model.joblib')
+    return joblib.load('models/xgb_loan_model.joblib')
 
 model_pipeline = load_model()
 
