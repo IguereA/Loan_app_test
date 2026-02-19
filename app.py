@@ -124,7 +124,7 @@ if st.button("🔍 Run Risk Analysis", use_container_width=True):
             st.success("### Result: LOW RISK")
             st.write("Model recommends **Approval**.")
             # Show green-ish progress for low risk
-            st.progress(safe_probability
+            st.progress(safe_probability)
             st.balloons()
             
     with col_res2:
