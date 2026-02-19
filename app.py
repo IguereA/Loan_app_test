@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
+from pycaret.classification import load_model, predict_model
 
 # --- PAGE CONFIG ---
 st.set_page_config(page_title="Loan Risk AI", page_icon="🏦", layout="wide")
@@ -10,7 +11,7 @@ st.set_page_config(page_title="Loan Risk AI", page_icon="🏦", layout="wide")
 @st.cache_resource
 def load_model():
     # Ensure this filename matches exactly what you saved in your notebook
-    return joblib.load('xgb_loan_model.joblib')
+    #return joblib.load('models/xgb_loan_model.joblib')
 
 model_pipeline = load_model()
 
